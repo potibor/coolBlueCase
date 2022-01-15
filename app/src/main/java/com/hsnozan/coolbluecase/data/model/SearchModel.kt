@@ -9,9 +9,7 @@ data class SearchModel(val products: List<ProductModel>)
 
 data class ProductModel(
     override val id: String,
-    val productId: Int,
     val productName: String,
-    val availabilityState: Int,
     val productImage: String,
     val reviewInformation: ReviewInformationModel
 ) : ListAdapterItem
