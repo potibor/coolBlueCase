@@ -23,7 +23,7 @@ import kotlinx.coroutines.launch
 class SearchViewModel @Inject constructor(private val searchUseCase: SearchUseCase) : ViewModel() {
 
     val searchedText = MutableLiveData<String?>()
-    private val onError = MutableLiveData<String>()
+    val onError = MutableLiveData<String>()
 
     private val _searchListLiveData = MutableLiveData<SearchModel?>()
     val searchListLiveData: LiveData<List<ProductModel>> =
@@ -40,11 +40,11 @@ class SearchViewModel @Inject constructor(private val searchUseCase: SearchUseCa
             .debounce(100)
             .distinctUntilChanged()
             .onEach { searchedTextValue ->
-                requestSearch(searchedTextValue)
+                getProducts(searchedTextValue)
             }.launchIn(viewModelScope)
     }
 
-    private fun requestSearch(searchedTextValue: String) = viewModelScope.launch {
+    fun getProducts(searchedTextValue: String) = viewModelScope.launch {
         searchUseCase.run(SearchUseCase.Params(query = searchedTextValue, page = 1))
             .either(::handleError, ::updateSearchList)
     }
