@@ -1,8 +1,11 @@
-package com.hsnozan.coolbluecase
+package com.hsnozan.coolbluecase.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hsnozan.coolbluecase.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
