@@ -10,8 +10,7 @@ import com.hsnozan.coolbluecase.util.load
  * Created by hsnozan on 15.01.2022.
  */
 
-class SearchAdapter() :
-    BaseListAdapter<ItemSearchBinding, ProductModel>() {
+class SearchAdapter : BaseListAdapter<ItemSearchBinding, ProductModel>() {
 
     override val layoutRes = R.layout.item_search
 
@@ -21,6 +20,6 @@ class SearchAdapter() :
     ) = with(binding) {
         itemImageView.load(item.productImage)
         brandNameTextView.text = item.productName
-        ratingBar.rating = item.reviewInformation.reviewSummary.reviewAverage
+        ratingBar.rating = item.reviewInformation.reviewSummary.averageRating
     }
 }

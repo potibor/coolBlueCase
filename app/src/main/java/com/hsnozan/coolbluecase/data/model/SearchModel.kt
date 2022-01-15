@@ -18,4 +18,9 @@ data class ProductModel(
 
 data class ReviewInformationModel(val reviewSummary: ReviewSummaryModel)
 
-data class ReviewSummaryModel(val reviewAverage: Float)
+data class ReviewSummaryModel(val reviewAverage: Float) {
+    val averageRating: Float
+        get() {
+            return reviewAverage / 2
+        }
+}
