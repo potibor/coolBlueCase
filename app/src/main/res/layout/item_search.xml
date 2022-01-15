@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/itemContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_large">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/itemImageView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_image_height"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/brandNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+            android:textSize="@dimen/text_size_large"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/itemImageView"
+            tools:text="Phone" />
+
+        <TextView
+            android:id="@+id/ratingCountTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingVertical="@dimen/margin_medium"
+            android:paddingStart="@dimen/margin_medium"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/coolBlue"
+            android:textSize="@dimen/text_size_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/brandNameTextView"
+            tools:ignore="RtlSymmetry"
+            tools:text="3.5" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingBar"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/margin_small"
+            android:numStars="5"
+            android:progressBackgroundTint="@color/coolBlue"
+            android:progressTint="@color/coolBlue"
+            app:layout_constraintBottom_toBottomOf="@id/ratingCountTextView"
+            app:layout_constraintStart_toEndOf="@+id/ratingCountTextView"
+            app:layout_constraintTop_toTopOf="@+id/ratingCountTextView"
+            tools:rating="3.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
