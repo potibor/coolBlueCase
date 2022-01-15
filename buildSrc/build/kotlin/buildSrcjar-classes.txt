@@ -1,0 +1,1 @@
+/Users/hasanozanal/AndroidProjects/CoolBlueCase/buildSrc/build/classes/kotlin/main/Libraries.class:/Users/hasanozanal/AndroidProjects/CoolBlueCase/buildSrc/build/classes/kotlin/main/Versions.class
